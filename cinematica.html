@@ -889,10 +889,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const TMDB_KEY = '687f4636d7ed1eb298df2cb445ab1a83';
-const TMDB = 'https://api.themoviedb.org/3';
 const IMG = 'https://image.tmdb.org/t/p/';
-const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 
 let allMovies = [];
 let heroMovies = [];
@@ -914,11 +911,11 @@ setTimeout(() => {
 }, 2200);
 
 async function tmdb(path, params = {}) {
-  const url = new URL(TMDB + path);
-  url.searchParams.set('api_key', TMDB_KEY);
-  url.searchParams.set('language', 'en-US');
+  const url = new URL('/api/tmdb', window.location.origin);
+  url.searchParams.set('path', path);
   Object.entries(params).forEach(([k,v]) => url.searchParams.set(k,v));
-  const r = await fetch(url);
+  const r = await fetch(url.toString());
+  if (!r.ok) throw new Error('TMDB proxy error: ' + r.status);
   return r.json();
 }
 
@@ -1320,29 +1317,23 @@ function filterRecs(genreId) {
 }
 
 async function getAiRecommendations(movie) {
-  const genres = (movie.genres || []).map(g => g.name).join(', ');
-  const prompt = `You are a film expert. A user just watched "${movie.title}" (${movie.release_date?.slice(0,4)||''}) — genres: ${genres || 'unknown'}. Overview: ${(movie.overview||'').slice(0,200)}
-
-List exactly 5 movie titles (different from "${movie.title}") that a fan would love. Focus on similar themes, mood, style. Return ONLY a JSON array of 5 title strings, nothing else. Example: ["Movie One","Movie Two","Movie Three","Movie Four","Movie Five"]`;
-
-  const response = await fetch(ANTHROPIC_URL, {
+  const response = await fetch('/api/recommendations', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 300,
-      messages: [{ role: 'user', content: prompt }]
+      title: movie.title,
+      release_date: movie.release_date,
+      overview: movie.overview,
+      genres: (movie.genres || []).map(g => g.name),
     })
   });
-  const data = await response.json();
-  const text = data.content?.[0]?.text || '[]';
-  try {
-    const clean = text.replace(/```json|```/g, '').trim();
-    return JSON.parse(clean);
-  } catch {
-    const matches = text.match(/"([^"]+)"/g);
-    return matches ? matches.map(s => s.replace(/"/g,'')) : [];
+
+  if (!response.ok) {
+    throw new Error('Recommendations API failed: ' + response.status);
   }
+
+  const data = await response.json();
+  return Array.isArray(data.titles) ? data.titles : [];
 }
 
 // SEARCH
