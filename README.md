@@ -4,7 +4,7 @@
 
 <br/>
 
-([![Live Demo](https://img.shields.io/badge/▶_WATCH_LIVE-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://cinematica-6yrldxx6q-tanishaf28s-projects.vercel.app))
+[![Live Demo](https://img.shields.io/badge/▶_WATCH_LIVE-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://cinematica-6yrldxx6q-tanishaf28s-projects.vercel.app)
 [![TMDB](https://img.shields.io/badge/Powered_by-TMDB-01b4e4?style=for-the-badge&logo=themoviedatabase&logoColor=white)](https://www.themoviedb.org/)
 [![Anthropic](https://img.shields.io/badge/AI-Anthropic-6e56cf?style=for-the-badge&logo=anthropic&logoColor=white)](https://anthropic.com)
 [![Vercel](https://img.shields.io/badge/Deployed-Vercel-000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
