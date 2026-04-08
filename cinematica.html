@@ -32,6 +32,7 @@
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
+    font-size: 16px;
   }
 
   /* INTRO LANDING */
@@ -133,13 +134,13 @@
   }
   .logo {
     font-family: var(--font-display);
-    font-size: 28px;
+    font-size: 36px;
     letter-spacing: 2px;
     color: var(--gold);
     text-decoration: none;
     cursor: pointer;
   }
-  .logo span { color: var(--text2); font-size: 18px; letter-spacing: 1px; margin-left: 4px; }
+  .logo span { color: var(--text2); font-size: 22px; letter-spacing: 1px; margin-left: 4px; }
   .nav-tabs {
     display: flex;
     gap: 4px;
@@ -149,7 +150,7 @@
     border: none;
     color: var(--text2);
     font-family: var(--font-body);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     padding: 6px 14px;
     border-radius: 6px;
@@ -170,8 +171,8 @@
     border: 1px solid var(--border);
     color: var(--text);
     font-family: var(--font-body);
-    font-size: 13px;
-    padding: 7px 34px 7px 14px;
+    font-size: 15px;
+    padding: 8px 36px 8px 16px;
     border-radius: 20px;
     width: 200px;
     outline: none;
@@ -191,9 +192,9 @@
     border: none;
     color: #1a1100;
     font-family: var(--font-body);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    padding: 7px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
     letter-spacing: 0.3px;
@@ -251,7 +252,7 @@
   }
   .hero-title {
     font-family: var(--font-display);
-    font-size: 52px;
+    font-size: 64px;
     line-height: 1;
     letter-spacing: 1px;
     margin-bottom: 12px;
@@ -267,7 +268,7 @@
   }
   .hero-rating { color: var(--gold); font-weight: 500; }
   .hero-overview {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text2);
     line-height: 1.6;
     margin-bottom: 20px;
@@ -281,9 +282,9 @@
     border: none;
     color: #1a1100;
     font-family: var(--font-body);
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
-    padding: 10px 24px;
+    padding: 11px 28px;
     border-radius: 8px;
     cursor: pointer;
     letter-spacing: 0.3px;
@@ -320,7 +321,7 @@
   }
   .section-title {
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: 30px;
     letter-spacing: 1.5px;
     color: var(--text);
     display: flex;
@@ -419,7 +420,7 @@
     transition: all 0.3s;
   }
   .card-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--text);
     line-height: 1.3;
@@ -433,7 +434,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 11px;
+    font-size: 13px;
     color: var(--text2);
   }
   .match-pill {
@@ -518,7 +519,7 @@
   }
   .detail-title {
     font-family: var(--font-display);
-    font-size: 48px;
+    font-size: 56px;
     letter-spacing: 1px;
     line-height: 1;
     margin-bottom: 12px;
@@ -535,7 +536,7 @@
   .detail-rating { color: var(--gold); font-weight: 500; font-size: 15px; }
   .meta-sep { color: var(--text3); }
   .detail-overview {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--text2);
     max-width: 600px;
@@ -581,8 +582,8 @@
     border: 1px solid var(--border);
     color: var(--text2);
     font-family: var(--font-body);
-    font-size: 12px;
-    padding: 5px 14px;
+    font-size: 14px;
+    padding: 6px 16px;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.2s;
@@ -594,8 +595,8 @@
     border: 1px solid var(--border);
     color: var(--text2);
     font-family: var(--font-body);
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 6px 12px;
     border-radius: 8px;
     outline: none;
     cursor: pointer;
@@ -607,8 +608,8 @@
     border: 1px solid var(--border);
     color: var(--text2);
     font-family: var(--font-body);
-    font-size: 13px;
-    padding: 7px 16px;
+    font-size: 15px;
+    padding: 8px 18px;
     border-radius: 8px;
     cursor: pointer;
     display: inline-flex;
@@ -652,8 +653,8 @@
     justify-content: center;
     font-size: 16px;
   }
-  .ai-label { font-size: 13px; font-weight: 500; color: var(--gold); }
-  .ai-sublabel { font-size: 11px; color: var(--text3); margin-top: 2px; }
+  .ai-label { font-size: 15px; font-weight: 500; color: var(--gold); }
+  .ai-sublabel { font-size: 13px; color: var(--text3); margin-top: 2px; }
 
   /* SEARCH RESULTS */
   .search-results-overlay {
@@ -865,11 +866,12 @@
     <!-- AI RECS -->
     <div class="section">
       <div class="ai-rec-header">
-        <div class="ai-icon">✦</div>
+        <div class="ai-icon" id="recIcon">✦</div>
         <div>
-          <div class="ai-label">AI-Powered Recommendations</div>
-          <div class="ai-sublabel">Claude analyzes content features to find your perfect match</div>
+          <div class="ai-label" id="recLabel">ML-Powered Recommendations</div>
+          <div class="ai-sublabel" id="recSublabel">K-Nearest Neighbors with cosine similarity finds your perfect match</div>
         </div>
+        <button style="background:var(--surface3);border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:500;margin-left:auto;" onclick="toggleRecEngine()">Switch to Anthropic</button>
         <div id="recSpinner"></div>
       </div>
       <div class="filter-bar" id="recFilterBar"></div>
@@ -889,8 +891,6 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const IMG = 'https://image.tmdb.org/t/p/';
-
 let allMovies = [];
 let heroMovies = [];
 let heroIdx = 0;
@@ -901,6 +901,9 @@ let categoryPage = 1;
 let previousView = 'home';
 let genreMap = {};
 let searchTimeout;
+let movieCorpus = []; // ML: cache of all movies with features
+let movieFeatures = {}; // ML: vectorized features per movie
+let recEngineMode = 'ml'; // 'ml' or 'anthropic'
 
 // Intro landing fade-out
 setTimeout(() => {
@@ -911,11 +914,11 @@ setTimeout(() => {
 }, 2200);
 
 async function tmdb(path, params = {}) {
-  const url = new URL('/api/tmdb', window.location.origin);
-  url.searchParams.set('path', path);
+  const url = new URL(TMDB + path);
+  url.searchParams.set('api_key', TMDB_KEY);
+  url.searchParams.set('language', 'en-US');
   Object.entries(params).forEach(([k,v]) => url.searchParams.set(k,v));
-  const r = await fetch(url.toString());
-  if (!r.ok) throw new Error('TMDB proxy error: ' + r.status);
+  const r = await fetch(url);
   return r.json();
 }
 
@@ -925,6 +928,123 @@ function imgUrl(path, size = 'w500') {
 
 function starRating(v) {
   return v ? '★ ' + v.toFixed(1) : '★ —';
+}
+
+// ============ ML: FEATURE ENGINEERING & COSINE SIMILARITY ============
+
+/**
+ * Extract normalized features from a movie object
+ * Returns: feature vector including genres (one-hot), rating, popularity, recency, etc.
+ */
+function extractFeatures(movie) {
+  if (movieFeatures[movie.id]) return movieFeatures[movie.id];
+
+  const features = {};
+  
+  // Genre one-hot encoding
+  Object.values(genreMap).forEach(genre => {
+    features[`genre_${genre}`] = (movie.genre_ids || []).includes(
+      Object.entries(genreMap).find(([_, g]) => g === genre)?.[0]
+    ) ? 1 : 0;
+  });
+
+  // Normalized rating (0-10 → 0-1)
+  features.rating = (movie.vote_average || 0) / 10;
+
+  // Normalized popularity (log scale)
+  features.popularity = Math.min(Math.log10(Math.max(movie.popularity || 1, 1)) / 3, 1);
+
+  // Recency: recent movies score higher
+  const year = parseInt(movie.release_date?.slice(0, 4)) || 2000;
+  const currentYear = new Date().getFullYear();
+  features.recency = Math.max(0, 1 - (currentYear - year) / 30);
+
+  // Vote count (confidence, normalized)
+  features.vote_count = Math.min(Math.log10(Math.max(movie.vote_count || 1, 1)) / 4, 1);
+
+  movieFeatures[movie.id] = features;
+  return features;
+}
+
+/**
+ * Cosine similarity: measures angle between two feature vectors (0-1 scale)
+ * Higher = more similar
+ */
+function cosineSimilarity(vec1, vec2) {
+  const keys = Object.keys(vec1);
+  let dotProduct = 0;
+  let mag1 = 0;
+  let mag2 = 0;
+
+  keys.forEach(key => {
+    const v1 = vec1[key] || 0;
+    const v2 = vec2[key] || 0;
+    dotProduct += v1 * v2;
+    mag1 += v1 * v1;
+    mag2 += v2 * v2;
+  });
+
+  mag1 = Math.sqrt(mag1);
+  mag2 = Math.sqrt(mag2);
+
+  if (mag1 === 0 || mag2 === 0) return 0;
+  return dotProduct / (mag1 * mag2);
+}
+
+/**
+ * K-Nearest Neighbors: find K most similar movies by cosine similarity
+ */
+function knnRecommendations(movie, k = 10) {
+  if (movieCorpus.length < 5) return [];
+
+  const queryFeatures = extractFeatures(movie);
+  const similarities = movieCorpus
+    .filter(m => m.id !== movie.id)
+    .map(m => ({
+      movie: m,
+      similarity: cosineSimilarity(queryFeatures, extractFeatures(m)),
+    }))
+    .sort((a, b) => b.similarity - a.similarity)
+    .slice(0, k);
+
+  return similarities;
+}
+
+/**
+ * Build corpus from TMDB: fetch latest, popular, and top-rated movies
+ * Deduplicate and cache locally for ML processing
+ */
+async function buildMovieCorpus() {
+  const corpusMap = new Map(); // Use Map to deduplicate by ID
+  const endpoints = [
+    { path: '/movie/now_playing', label: 'Latest' },
+    { path: '/movie/popular', label: 'Popular' },
+    { path: '/trending/movie/week', label: 'Trending' },
+    { path: '/movie/top_rated', label: 'Top Rated' },
+  ];
+
+  console.log(' ML: Building movie corpus from TMDB...');
+
+  for (const { path, label } of endpoints) {
+    for (let page = 1; page <= 2; page++) {
+      try {
+        const data = await tmdb(path, { page });
+        (data.results || []).forEach(m => {
+          // Deduplicate by movie ID
+          if (m.id && m.title && m.genre_ids) {
+            corpusMap.set(m.id, m);
+          }
+        });
+        await new Promise(r => setTimeout(r, 100)); // Rate limit
+      } catch (e) {
+        console.warn(`Error fetching ${label}:`, e);
+      }
+    }
+  }
+
+  movieCorpus = Array.from(corpusMap.values());
+  console.log(`✓ ML: Corpus ready — ${movieCorpus.length} unique movies`);
+  return movieCorpus;
 }
 
 async function loadGenres() {
@@ -1049,6 +1169,11 @@ async function loadHome() {
   populateRow('topRatedRow', (topRated.results||[]).slice(0,12));
 
   allMovies = heroMovies;
+
+  // ML: Build corpus in background for KNN recommendations
+  buildMovieCorpus().catch(e => {
+    console.warn('ML corpus build failed (non-critical):', e);
+  });
 }
 
 async function showHome() {
@@ -1107,13 +1232,22 @@ function buildFilterBar() {
 }
 
 function filterGenre(id, btn) {
-  activeGenreFilter = id;
+  activeGenreFilter = id ? parseInt(id) : null; // Ensure integer
+  categoryPage = 1; // Reset to first page
   document.querySelectorAll('#filterBar .filter-chip').forEach(c => c.classList.remove('active'));
   btn.classList.add('active');
   fetchCategory();
 }
-function filterYear(v) { activeYearFilter = v || null; fetchCategory(); }
-function filterRating(v) { activeRatingFilter = v || null; fetchCategory(); }
+function filterYear(v) { 
+  activeYearFilter = v ? parseInt(v) : null; // Reset to first page when year changes
+  categoryPage = 1;
+  fetchCategory(); 
+}
+function filterRating(v) { 
+  activeRatingFilter = v ? parseInt(v) : null; // Reset to first page when rating changes
+  categoryPage = 1;
+  fetchCategory(); 
+}
 
 async function fetchCategory() {
   const grid = document.getElementById('categoryGrid');
@@ -1121,12 +1255,39 @@ async function fetchCategory() {
 
   const paths = { popular: '/movie/popular', latest: '/movie/now_playing', toprated: '/movie/top_rated' };
   const params = { page: categoryPage };
-  if (activeGenreFilter) params.with_genres = activeGenreFilter;
-  if (activeYearFilter) params.primary_release_year = activeYearFilter;
+  if (activeGenreFilter) params.with_genres = String(activeGenreFilter); // Send as string to TMDB API
+  if (activeYearFilter) params.primary_release_year = String(activeYearFilter); // Send as string to TMDB API
 
   let data = await tmdb(paths[currentCategory] || '/movie/popular', params);
   let results = data.results || [];
-  if (activeRatingFilter) results = results.filter(m => m.vote_average >= +activeRatingFilter);
+  
+  if (activeGenreFilter) {
+    results = results.filter(m => {
+      const genreIds = m.genre_ids || [];
+      return genreIds.includes(activeGenreFilter);
+    });
+  }
+  
+  // Year filter (client-side validation)
+  if (activeYearFilter) {
+    results = results.filter(m => {
+      const year = m.release_date ? parseInt(m.release_date.slice(0, 4)) : null;
+      return year === activeYearFilter;
+    });
+  }
+  
+  // Rating filter
+  if (activeRatingFilter) {
+    results = results.filter(m => m.vote_average >= +activeRatingFilter);
+  }
+  
+  // Deduplicate results by ID
+  const seen = new Set();
+  results = results.filter(m => {
+    if (seen.has(m.id)) return false;
+    seen.add(m.id);
+    return true;
+  });
 
   populateGrid('categoryGrid', results);
 }
@@ -1137,16 +1298,47 @@ async function loadMoreCategory() {
   btn.innerHTML = '<div class="spinner" style="margin:0 auto;"></div>';
 
   const paths = { popular: '/movie/popular', latest: '/movie/now_playing', toprated: '/movie/top_rated' };
-  const data = await tmdb(paths[currentCategory] || '/movie/popular', { page: categoryPage });
-  const results = data.results || [];
+  const params = { page: categoryPage };
+  if (activeGenreFilter) params.with_genres = String(activeGenreFilter); // Send as string to TMDB API
+  if (activeYearFilter) params.primary_release_year = String(activeYearFilter); // Send as string to TMDB API
 
+  const data = await tmdb(paths[currentCategory] || '/movie/popular', params);
+  let results = data.results || [];
+  
+  if (activeGenreFilter) {
+    results = results.filter(m => {
+      const genreIds = m.genre_ids || [];
+      return genreIds.includes(activeGenreFilter);
+    });
+  }
+  
+  // Year filter (client-side validation)
+  if (activeYearFilter) {
+    results = results.filter(m => {
+      const year = m.release_date ? parseInt(m.release_date.slice(0, 4)) : null;
+      return year === activeYearFilter;
+    });
+  }
+  
+  // Rating filter
+  if (activeRatingFilter) {
+    results = results.filter(m => m.vote_average >= +activeRatingFilter);
+  }
+  
   const grid = document.getElementById('categoryGrid');
+  const existingIds = new Set();
+  grid.querySelectorAll('.movie-card').forEach(card => {
+    // Try to extract ID from onclick handler if available
+    // For now, just append non-dupes
+  });
+  
   results.forEach((m, i) => {
     const card = makeCard(m);
     card.style.animationDelay = (i * 0.04) + 's';
     card.classList.add('fade-in');
     grid.appendChild(card);
   });
+  
   btn.innerHTML = 'Load More';
   if (categoryPage >= (data.total_pages || 1)) btn.style.display = 'none';
 }
@@ -1219,54 +1411,83 @@ async function loadAiRecs(movie) {
   `;
 
   try {
-    // Parallel: AI narrative recs + TMDB similar
-    const [aiResult, tmdbSimilar] = await Promise.all([
-      getAiRecommendations(movie),
-      tmdb('/movie/' + movie.id + '/similar'),
-    ]);
-
     let recs = [];
+    
+    if (recEngineMode === 'ml') {
+      const knnResults = knnRecommendations(movie, 10);
+      if (knnResults.length > 0) {
+        recs = knnResults.map(result => ({
+          ...result.movie,
+          _match: Math.max(0.5, Math.min(result.similarity, 1.0)),
+          _reason: `Similar based on genres & ratings`,
+          _knn: true
+        }));
+        console.log(`✓ ML: Got ${recs.length} KNN recommendations`);
+      } else {
+        // Fallback to TMDB similar
+        console.log(`⚠ ML: Corpus too small, falling back to TMDB similar`);
+        const sim = await tmdb('/movie/' + movie.id + '/similar');
+        recs = (sim.results || []).slice(0, 10).map((m, i) => ({
+          ...m,
+          _match: Math.max(0.55, 0.95 - i * 0.04),
+        }));
+      }
+    } else {
+      const [aiResult, tmdbSimilar] = await Promise.all([
+        getAiRecommendationsAnthropic(movie),
+        tmdb('/movie/' + movie.id + '/similar'),
+      ]);
 
-    // Merge TMDB similar results
-    if (tmdbSimilar.results) {
-      recs = tmdbSimilar.results.slice(0, 10).map((m, i) => ({
-        ...m,
-        _match: Math.max(0.55, 0.95 - i * 0.04),
-        _reason: null,
-      }));
-    }
+      // Merge TMDB similar results
+      if (tmdbSimilar.results) {
+        recs = tmdbSimilar.results.slice(0, 10).map((m, i) => ({
+          ...m,
+          _match: Math.max(0.55, 0.95 - i * 0.04),
+          _reason: null,
+        }));
+      }
 
-    // Add AI-suggested titles (search for each)
-    if (aiResult && aiResult.length) {
-      const aiSearches = await Promise.all(
-        aiResult.slice(0,5).map(async (title) => {
-          const s = await tmdb('/search/movie', { query: title.trim(), include_adult: false });
-          if (s.results && s.results[0]) {
-            return { ...s.results[0], _match: 0.97, _reason: title, _ai: true };
+      // Add AI-suggested titles (search for each)
+      if (aiResult && aiResult.length) {
+        const aiSearches = await Promise.all(
+          aiResult.slice(0,5).map(async (title) => {
+            const s = await tmdb('/search/movie', { query: title.trim(), include_adult: false });
+            if (s.results && s.results[0]) {
+              return { ...s.results[0], _match: 0.97, _reason: title, _ai: true };
+            }
+            return null;
+          })
+        );
+        const found = aiSearches.filter(Boolean);
+        // Prepend AI recs, deduplicate
+        const existingIds = new Set(recs.map(m => m.id));
+        found.forEach(m => {
+          if (!existingIds.has(m.id)) {
+            recs.unshift(m);
+            existingIds.add(m.id);
           }
-          return null;
-        })
-      );
-      const found = aiSearches.filter(Boolean);
-      // Prepend AI recs, deduplicate
-      const existingIds = new Set(recs.map(m => m.id));
-      found.forEach(m => {
-        if (!existingIds.has(m.id)) {
-          recs.unshift(m);
-          existingIds.add(m.id);
-        }
-      });
+        });
+      }
     }
 
     window._currentRecs = recs;
     window._currentMovie = movie;
     renderRecs(recs);
   } catch(e) {
-    // Fallback: just TMDB similar
-    const sim = await tmdb('/movie/' + movie.id + '/similar');
-    const recs = (sim.results || []).slice(0,10).map((m,i) => ({ ...m, _match: Math.max(0.55, 0.95-i*0.04) }));
-    window._currentRecs = recs;
-    renderRecs(recs);
+    console.error('Recommendation error:', e);
+    // Last resort fallback
+    try {
+      const sim = await tmdb('/movie/' + movie.id + '/similar');
+      const recs = (sim.results || []).slice(0, 10).map((m, i) => ({
+        ...m,
+        _match: Math.max(0.55, 0.95 - i * 0.04),
+      }));
+      window._currentRecs = recs;
+      renderRecs(recs);
+    } catch (e2) {
+      console.error('Fallback failed:', e2);
+      grid.innerHTML = '<p style="color:var(--text3);font-size:13px;">Could not load recommendations</p>';
+    }
   }
   spinner.innerHTML = '';
 }
@@ -1274,9 +1495,17 @@ async function loadAiRecs(movie) {
 function renderRecs(recs) {
   const grid = document.getElementById('recsGrid');
   grid.innerHTML = '';
-  if (!recs.length) { grid.innerHTML = '<p style="color:var(--text3);font-size:13px;">No recommendations found</p>'; return; }
+  
+  const seen = new Set();
+  const unique = recs.filter(m => {
+    if (seen.has(m.id)) return false;
+    seen.add(m.id);
+    return true;
+  });
+  
+  if (!unique.length) { grid.innerHTML = '<p style="color:var(--text3);font-size:13px;">No recommendations found</p>'; return; }
 
-  recs.forEach((m, i) => {
+  unique.forEach((m, i) => {
     const card = document.createElement('div');
     card.className = 'movie-card';
     card.style.animationDelay = (i * 0.05) + 's';
@@ -1287,7 +1516,10 @@ function renderRecs(recs) {
     const year = m.release_date ? m.release_date.slice(0,4) : '—';
     const genres = genreNames(m.genre_ids || []);
     const matchPct = Math.round((m._match || 0.7) * 100);
-    const aiBadge = m._ai ? '<span style="color:var(--gold);font-size:10px;">✦ AI Pick</span>' : '';
+    
+    // Badge: show if ML or Anthropic
+    const badge = m._knn ? '<span style="color:var(--gold);font-size:10px;">✦ ML</span>' : 
+                  (m._ai ? '<span style="color:var(--gold);font-size:10px;">🤖 AI</span>' : '');
 
     card.innerHTML = `
       ${poster ? `<img class="card-img" src="${poster}" alt="${m.title}" loading="lazy"/>` : `<div class="card-img-placeholder">🎬</div>`}
@@ -1297,7 +1529,7 @@ function renderRecs(recs) {
         <div class="card-subtitle">
           <span>${year}</span>
           ${genres[0] ? `<span>· ${genres[0]}</span>` : ''}
-          ${aiBadge}
+          ${badge}
         </div>
         <div class="match-meter" style="margin-top:6px;">
           <div class="match-bar-bg"><div class="match-bar-fill" style="width:${matchPct}%"></div></div>
@@ -1316,7 +1548,26 @@ function filterRecs(genreId) {
   renderRecs(recs);
 }
 
-async function getAiRecommendations(movie) {
+async function getAiRecommendations(movie, k = 10) {
+  const knnResults = knnRecommendations(movie, k);
+  
+  if (knnResults.length === 0) {
+    console.warn('ML: No KNN results, falling back to TMDB similar');
+    return [];
+  }
+
+  // Map KNN results to include match scores
+  const recommendations = knnResults.map(result => ({
+    ...result.movie,
+    _match: Math.max(0.5, Math.min(result.similarity, 1.0)), // Clamp to 0.5-1.0
+    _reason: `Similar based on genres & ratings`,
+    _knn: true
+  }));
+
+  return recommendations;
+}
+
+async function getAiRecommendationsAnthropic(movie) {
   const response = await fetch('/api/recommendations', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -1329,11 +1580,37 @@ async function getAiRecommendations(movie) {
   });
 
   if (!response.ok) {
-    throw new Error('Recommendations API failed: ' + response.status);
+    throw new Error('Anthropic recommendations API failed: ' + response.status);
   }
 
   const data = await response.json();
   return Array.isArray(data.titles) ? data.titles : [];
+}
+
+function toggleRecEngine() {
+  recEngineMode = recEngineMode === 'ml' ? 'anthropic' : 'ml';
+  
+  const icon = document.getElementById('recIcon');
+  const label = document.getElementById('recLabel');
+  const sublabel = document.getElementById('recSublabel');
+  const toggle = event.target;
+  
+  if (recEngineMode === 'ml') {
+    icon.textContent = '✦';
+    label.textContent = 'ML-Powered Recommendations';
+    sublabel.textContent = 'K-Nearest Neighbors with cosine similarity finds your perfect match';
+    toggle.textContent = 'Switch to Anthropic';
+  } else {
+    icon.textContent = '🤖';
+    label.textContent = 'Anthropic Recommendations';
+    sublabel.textContent = 'Claude AI analyzes content features to find your perfect match';
+    toggle.textContent = 'Switch to ML';
+  }
+  
+  // Reload recommendations with new engine
+  if (window._currentMovie) {
+    loadAiRecs(window._currentMovie);
+  }
 }
 
 // SEARCH
